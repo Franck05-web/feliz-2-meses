@@ -9,16 +9,17 @@
    ✏️  EDITA SOLO ESTA PARTE (lo que está entre comillas)
    ================================================================== */
 const DATOS = {
-  ella: "Dafnne",                  // su nombre o apodo
+  ella: "Dafnne",                   // su nombre o apodo
   yo: "Franck",                     // tu nombre
   fechaInicio: "2026-08-23",        // fecha en que empezaron: año-mes-día
   titulo: "Feliz 2 meses",
 
-  portada: "fotos/portada.jpg",     // foto del círculo de arriba
-  musica: "musica/cancion.mp3",     // canción de fondo (mp3 o m4a)
+  // ARCHIVOS: pueden estar sueltos o dentro de las carpetas fotos, musica y video.
+  portada: "portada.jpg",           // foto del círculo de arriba
+  musica: "cancion.mp3",            // tu canción de fondo (mp3 o m4a)
   musicaTexto: "Esta canción la canto yo, para ti ♪",   // aviso al empezar la música
 
-  // FOTOS: carpeta "fotos" con nombres 1, 2, 3... (jpg, jpeg o png).
+  // FOTOS: con nombres 1, 2, 3... (jpg, jpeg o png).
   // Cada línea es el texto de una foto, en orden. Si agregas fotos, agrega líneas.
   fotos: [
     "Tú, yo y una tarde que no quería que terminara",
@@ -27,53 +28,58 @@ const DATOS = {
     "Hasta en dibujo se nota lo feliz que me haces",
   ],
 
-  // VIDEO: carpeta "video". Si no quieres video, deja video: "".
-  video: "video/nuestro-video.mp4",
-  videoPortada: "video/portada-video.jpg",
+  // VIDEO. Si no quieres video, deja video: "".
+  video: "nuestro-video.mp4",
+  videoPortada: "portada-video.jpg",
 
   // Frase que aparece después del contador.
-  fraseComienzo: {
-    texto: "No sabría decir la hora, ni el lugar, ni la mirada, ni las palabras que lo empezaron… Ya estaba en medio antes de darme cuenta de que había empezado.",
-    autor: "Jane Austen", obra: "Orgullo y prejuicio",
-  },
+  fraseComienzo: "No sabría decir la hora, ni el lugar, ni la mirada, ni las palabras que lo empezaron… Ya estaba en medio antes de darme cuenta de que había empezado.",
 
-  // Frases de libros (ella las pasa deslizando).
+  // Frases que ella pasa deslizando.
   frases: [
-    { texto: "¿Qué es poesía? ¿Y tú me lo preguntas? Poesía… eres tú.", autor: "Gustavo Adolfo Bécquer", obra: "Rimas" },
-    { texto: "De lo que sea que estén hechas nuestras almas, la suya y la mía son iguales.", autor: "Emily Brontë", obra: "Cumbres borrascosas" },
-    { texto: "Mi generosidad es tan inmensa como el mar, y mi amor igual de profundo: cuanto más te doy, más tengo, porque ambos son infinitos.", autor: "William Shakespeare", obra: "Romeo y Julieta" },
-    { texto: "Por una mirada, un mundo; por una sonrisa, un cielo; por un beso… ¡yo no sé qué te diera por un beso!", autor: "Gustavo Adolfo Bécquer", obra: "Rimas" },
+    "¿Qué es poesía? ¿Y tú me lo preguntas? Poesía… eres tú.",
+    "De lo que sea que estén hechas nuestras almas, la tuya y la mía son iguales.",
+    "Mi amor es tan inmenso como el mar y tan profundo como él: cuanto más te doy, más tengo, porque ambos son infinitos.",
+    "Por una mirada, un mundo; por una sonrisa, un cielo; por un beso… ¡yo no sé qué te diera por un beso!",
   ],
 
   // Sección de la distancia.
-  fondoDistancia: "fotos/3.jpg",
-  fraseDistancia: {
-    texto: "La ausencia disminuye las pasiones pequeñas y aumenta las grandes, como el viento apaga las velas y aviva el fuego.",
-    autor: "François de La Rochefoucauld", obra: "Máximas",
-  },
+  fondoDistancia: "3.jpg",
+  fraseDistancia: "La ausencia disminuye las pasiones pequeñas y aumenta las grandes, como el viento apaga las velas y aviva el fuego.",
   textoDistancia: "Estamos en lugares distintos, pero miramos el mismo cielo. Cada día que pasa es un día menos para volver a abrazarte, y cada kilómetro solo me confirma lo mucho que te quiero.",
 
-  // SOBRES «ÁBREME CUANDO…»: cada uno abre un mensaje y una canción.
+  // SOBRES «ÁBREME CUANDO…»: cada uno abre un mensaje y una canción que suena ahí mismo.
+  // youtube: pega el link de YouTube de la canción que quieras (puedes cambiarlo).
   // miVoz: true agrega un botón para escuchar tu canción.
   abreme: [
     { cuando: "me extrañes", icono: "🌙", miVoz: true, cancion: "Creo en ti", artista: "Reik",
+      youtube: "https://www.youtube.com/watch?v=_FGC6XNw8h4",
       mensaje: "Yo también te estoy extrañando, te lo prometo. Cierra los ojos y piensa en nuestro último abrazo: el próximo está cada día más cerca. Mientras tanto, aquí tienes mi voz." },
     { cuando: "estés triste", icono: "🌧️", cancion: "Hoy es un buen día", artista: "Río Roma ft. Noel Schajris",
+      youtube: "https://www.youtube.com/watch?v=36kmCZheR1I",
       mensaje: "Si hoy fue un día difícil, no estás sola. Estoy aquí para escucharte el tiempo que necesites, aunque sea a la distancia. Llámame: tu voz también me arregla el día." },
     { cuando: "no puedas dormir", icono: "✨", cancion: "Sabes", artista: "Reik",
+      youtube: "https://www.youtube.com/watch?v=FG2SJM1VwQM",
       mensaje: "Imagina que estoy a tu lado contándote cómo me fue en el día, hasta que te gane el sueño. Respira despacio… mañana te escribo apenas despierte." },
     { cuando: "quieras saber cuánto te quiero", icono: "💗", cancion: "Mi persona favorita", artista: "Río Roma",
+      youtube: "https://www.youtube.com/watch?v=AJKzOgv5YNU",
       mensaje: "Más de lo que cabe en esta página. Eres lo primero que pienso al despertar y lo último antes de dormir. Eres, sin duda, mi persona favorita." },
     { cuando: "dudes de nosotros", icono: "🤝", cancion: "Me cambiaste la vida", artista: "Río Roma",
+      youtube: "https://www.youtube.com/watch?v=_X3PPuF_yOE",
       mensaje: "Mira nuestras fotos: así de felices somos. La distancia no cambia lo que siento; me demuestra cuánto vales para mí. Te elijo hoy y te voy a seguir eligiendo." },
     { cuando: "estés feliz", icono: "☀️", cancion: "Qué vida la mía", artista: "Reik",
+      youtube: "https://www.youtube.com/watch?v=Qwk9m4NtCOo",
       mensaje: "¡Celébralo y cuéntamelo todo! Tu felicidad es mi parte favorita del día. Ojalá muy pronto lo celebremos juntos." },
   ],
 
-  // Tarjetas que ella voltea al tocarlas.
-  fraseRazones: { texto: "¿Cómo te amo? Déjame contar las maneras.", autor: "Elizabeth Barrett Browning", obra: "Sonetos del portugués" },
+  // COSAS QUE AMO DE TI: tarjetas que ella voltea al tocarlas. Una línea por tarjeta.
+  fraseRazones: "¿Cómo te amo? Déjame contar las maneras.",
   razones: [
     "Tu sonrisa, aunque sea por videollamada.",
+    "Tus cachetes, mis favoritos del mundo.",
+    "Tus besos adictivos cuando estamos juntos.",
+    "Tu mirada, que me desarma.",
+    "Tu forma de ser, única como tú.",
     "Cómo me haces reír sin esfuerzo.",
     "Que me escuchas de verdad.",
     "Tu voz cuando me dices buenas noches.",
@@ -102,7 +108,7 @@ const DATOS = {
 <!-- Vista previa del link en WhatsApp (funciona si el repositorio se llama feliz-2-meses) -->
 <meta property="og:title" content="Tengo algo para ti ♥">
 <meta property="og:description" content="Ábrelo con el volumen alto.">
-<meta property="og:image" content="https://franck05-web.github.io/feliz-2-meses/fotos/vista-link.jpg">
+<meta property="og:image" content="https://franck05-web.github.io/feliz-2-meses/vista-link.jpg">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#1c0912">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -313,6 +319,7 @@ const DATOS = {
   .modal-carta h3 { font-family: "Great Vibes", cursive; font-weight: 400; font-size: clamp(36px, 10vw, 46px); line-height: 1.1; color: #b0244f; margin: 4px 0 12px; }
   .modal-carta .msg { font-family: "Caveat", cursive; font-size: 24px; line-height: 1.3; }
   #modalCerrar { position: absolute; top: 10px; right: 10px; width: 38px; height: 38px; border: 0; border-radius: 50%; background: rgba(176,36,79,.12); color: #b0244f; font-size: 18px; }
+  .disco[hidden] { display: none; }
   .disco { display: flex; align-items: center; gap: 14px; margin: 22px 0 14px; padding: 12px; border-radius: 14px; background: #2a0d1a; color: #fff; text-align: left; }
   .vinilo { flex: 0 0 56px; height: 56px; border-radius: 50%; animation: girarBorde 3s linear infinite;
     background: radial-gradient(circle, #ff7aa2 0 9px, #1a0a10 10px 12px, #2b2b2b 13px 14px, #111 15px 17px, #2b2b2b 18px 19px, #111 20px 22px, #2b2b2b 23px 24px, #111 25px); }
@@ -323,6 +330,12 @@ const DATOS = {
   .acciones a, .acciones button { display: inline-flex; align-items: center; gap: 6px; padding: 11px 16px; border-radius: 999px; font-size: 15px; font-weight: 700; text-decoration: none; border: 0; }
   .btn-voz { color: #fff; background: linear-gradient(135deg, var(--rosa), var(--rosa-fuerte)); box-shadow: 0 8px 20px rgba(255,77,126,.35); }
   .btn-yt { color: #fff; background: #d6213b; }
+  .btn-escuchar { color: #fff; background: linear-gradient(135deg, #ff4d7e, #c8174a); box-shadow: 0 8px 20px rgba(200,23,74,.35); }
+  .reproductor { position: relative; margin: 18px 0 14px; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #000; box-shadow: 0 10px 24px rgba(0,0,0,.35); animation: aparecer .4s ease; }
+  .reproductor[hidden] { display: none; }
+  .reproductor iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .mini-enlaces { margin-top: 14px; font-size: 13px; color: #8a5a6a; }
+  .mini-enlaces a { color: #b0244f; font-weight: 700; }
   .btn-sp { color: #fff; background: #1a9e4b; }
 
   #aviso { position: fixed; left: 50%; bottom: 82px; z-index: 45; transform: translate(-50%, 20px); opacity: 0; padding: 10px 18px; border-radius: 999px; background: rgba(40,10,25,.88); border: 1px solid rgba(255,198,214,.3); color: var(--rosa-suave); font-size: 14px; white-space: nowrap; transition: opacity .5s ease, transform .5s ease; pointer-events: none; }
@@ -448,7 +461,6 @@ const DATOS = {
   <blockquote class="cita revelar" id="citaComienzo">
     <span class="adorno">♥ ♥ ♥</span>
     <q></q>
-    <cite></cite>
   </blockquote>
 
   <section class="seccion">
@@ -480,7 +492,7 @@ const DATOS = {
       <p class="pre revelar">Aunque estemos lejos</p>
       <h2 class="script revelar">La distancia no nos gana</h2>
       <div class="ruta revelar"><span data-ella></span><div class="linea"><i>♥</i></div><span data-yo></span></div>
-      <blockquote class="cita revelar" id="citaDistancia"><q></q><cite></cite></blockquote>
+      <blockquote class="cita revelar" id="citaDistancia"><q></q></blockquote>
       <p class="distancia-texto revelar" id="textoDistancia"></p>
     </div>
   </section>
@@ -493,7 +505,7 @@ const DATOS = {
 
   <section class="seccion">
     <h2 class="script revelar">Cosas que amo de ti</h2>
-    <blockquote class="cita revelar" id="citaRazones"><q></q><cite></cite></blockquote>
+    <blockquote class="cita revelar" id="citaRazones"><q></q></blockquote>
     <p class="sub revelar" style="margin-top: 18px">Toca cada tarjeta</p>
     <div class="cartas" id="cartas"></div>
   </section>
@@ -528,7 +540,9 @@ const DATOS = {
       <div class="vinilo"></div>
       <div><small>Te dedico</small><b id="modalCancion"></b><span id="modalArtista"></span></div>
     </div>
+    <div class="reproductor" id="reproductor" hidden></div>
     <div class="acciones" id="modalAcciones"></div>
+    <p class="mini-enlaces" id="miniEnlaces"></p>
   </div>
 </div>
 
@@ -548,6 +562,28 @@ const DATOS = {
   const $ = (s) => document.querySelector(s);
   const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 
+  // Busca un archivo suelto o dentro de su carpeta (fotos, musica, video).
+  function variantes(ruta) {
+    if (!ruta) return [];
+    const nombre = String(ruta).split("/").pop();
+    return [...new Set([ruta, nombre, "fotos/" + nombre, "musica/" + nombre, "video/" + nombre])];
+  }
+  async function encontrar(rutas) {
+    let respondio = false;
+    for (const r of rutas) {
+      try {
+        const res = await fetch(r, { method: "HEAD", cache: "no-store" });
+        respondio = true;
+        if (res.ok) return r;
+      } catch (e) {}
+    }
+    return respondio ? null : rutas[0];
+  }
+  function idYouTube(url) {
+    const m = String(url || "").match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/);
+    return m ? m[1] : null;
+  }
+
   /* ---------- Textos ---------- */
   document.title = D.titulo + ", " + D.ella + " ♥";
   document.querySelectorAll("[data-ella]").forEach((e) => (e.textContent = D.ella));
@@ -560,16 +596,14 @@ const DATOS = {
   $("#textoDistancia").textContent = D.textoDistancia;
 
   function ponerCita(el, f) {
-    if (!f || !f.texto) { el.remove(); return; }
-    el.querySelector("q").textContent = "«" + f.texto + "»";
-    const c = el.querySelector("cite");
-    c.textContent = f.autor || "";
-    if (f.obra) { const i = document.createElement("i"); i.textContent = f.obra; c.appendChild(i); }
+    const t = typeof f === "string" ? f : f && f.texto;
+    if (!t) { el.remove(); return; }
+    el.querySelector("q").textContent = "«" + t + "»";
   }
   ponerCita($("#citaComienzo"), D.fraseComienzo);
   ponerCita($("#citaDistancia"), D.fraseDistancia);
   ponerCita($("#citaRazones"), D.fraseRazones);
-  if (D.fondoDistancia) $("#distanciaFondo").style.backgroundImage = "url('" + D.fondoDistancia + "')";
+  if (D.fondoDistancia) probar(variantes(D.fondoDistancia)).then((r) => { if (r) $("#distanciaFondo").style.backgroundImage = "url('" + r.src + "')"; });
 
   function leerFecha(t) {
     const [a, m, d] = String(t).split("-").map(Number);
@@ -629,7 +663,7 @@ const DATOS = {
       img.src = rutas[0];
     });
   }
-  const cargarFoto = (n) => probar(EXT.map((e) => "fotos/" + n + "." + e));
+  const cargarFoto = (n) => probar(EXT.flatMap((e) => [n + "." + e, "fotos/" + n + "." + e]));
 
   const contFotos = $("#fotos");
   const giros = [-2.5, 2.5, -1.5, 3, -3, 1.5];
@@ -660,7 +694,7 @@ const DATOS = {
   });
 
   // Foto del círculo de arriba: la portada, o si no existe, la foto 1.
-  (D.portada ? probar([D.portada]) : Promise.resolve(null))
+  (D.portada ? probar(variantes(D.portada)) : Promise.resolve(null))
     .then((r) => r || primera)
     .then((r) => { if (r) { $("#heroFoto img").src = r.src; $("#heroFoto").hidden = false; } });
 
@@ -691,11 +725,8 @@ const DATOS = {
   const puntos = D.frases.map((f, i) => {
     const art = document.createElement("article");
     art.className = "frase";
-    art.innerHTML = "<q></q><cite></cite>";
-    art.querySelector("q").textContent = f.texto;
-    const c = art.querySelector("cite");
-    c.textContent = f.autor;
-    if (f.obra) { const it = document.createElement("i"); it.textContent = f.obra; c.appendChild(it); }
+    art.innerHTML = "<q></q>";
+    art.querySelector("q").textContent = typeof f === "string" ? f : f.texto;
     contFrases.appendChild(art);
     const p = document.createElement("span");
     p.className = "punto" + (i === 0 ? " activo" : "");
@@ -729,40 +760,63 @@ const DATOS = {
   });
   if (!contSobres.children.length) $("#seccionAbreme").remove();
 
-  function enlace(clase, texto, url) {
+  const reproductor = $("#reproductor");
+  function pararCancion() { reproductor.innerHTML = ""; reproductor.hidden = true; }
+  function enlace(texto, url) {
     const a = document.createElement("a");
-    a.className = clase; a.textContent = texto; a.href = url; a.target = "_blank"; a.rel = "noopener";
-    a.addEventListener("click", () => { if (audio) audio.pause(); video.pause(); });
+    a.textContent = texto; a.href = url; a.target = "_blank"; a.rel = "noopener";
+    a.addEventListener("click", () => { if (audio) audio.pause(); video.pause(); pararCancion(); });
     return a;
   }
   function abrirSobre(s) {
     $("#modalTitulo").textContent = s.cuando.charAt(0).toUpperCase() + s.cuando.slice(1);
     $("#modalMsg").textContent = s.mensaje;
-    const acc = $("#modalAcciones");
-    acc.innerHTML = "";
-    if (s.miVoz && audio && !audioFallo) {
-      const v = document.createElement("button");
-      v.className = "btn-voz"; v.textContent = "♪ Escuchar mi voz";
-      v.addEventListener("click", () => { video.pause(); audio.currentTime = 0; audio.play().catch(() => {}); avisar(D.musicaTexto); });
-      acc.appendChild(v);
-    }
+    const acc = $("#modalAcciones"), mini = $("#miniEnlaces");
+    acc.innerHTML = ""; mini.innerHTML = "";
+    pararCancion();
     if (s.cancion) {
       const q = encodeURIComponent((s.artista ? s.artista.replace(/ ft\..*/, "") + " " : "") + s.cancion);
+      const urlYT = s.youtube || "https://www.youtube.com/results?search_query=" + q;
+      const id = idYouTube(s.youtube);
       $("#modalCancion").textContent = s.cancion;
       $("#modalArtista").textContent = s.artista || "";
       $("#modalDisco").hidden = false;
-      acc.appendChild(enlace("btn-yt", "▶ YouTube", "https://www.youtube.com/results?search_query=" + q));
-      acc.appendChild(enlace("btn-sp", "♫ Spotify", "https://open.spotify.com/search/" + q));
+      if (id) {
+        const b = document.createElement("button");
+        b.className = "btn-escuchar"; b.textContent = "▶ Escuchar aquí";
+        b.addEventListener("click", () => {
+          if (audio) audio.pause();
+          video.pause();
+          const f = document.createElement("iframe");
+          f.allow = "autoplay; encrypted-media; picture-in-picture";
+          f.allowFullscreen = true;
+          f.title = s.cancion;
+          f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&playsinline=1&rel=0";
+          reproductor.innerHTML = "";
+          reproductor.appendChild(f);
+          reproductor.hidden = false;
+          $("#modalDisco").hidden = true;
+          b.remove();
+        });
+        acc.appendChild(b);
+      }
+      mini.append(id ? "¿No carga? Ábrela en " : "Escúchala en ", enlace("YouTube", urlYT), " o ", enlace("Spotify", "https://open.spotify.com/search/" + q));
     } else {
       $("#modalDisco").hidden = true;
     }
+    if (s.miVoz && audio && !audioFallo) {
+      const v = document.createElement("button");
+      v.className = "btn-voz"; v.textContent = "♪ Escuchar mi voz";
+      v.addEventListener("click", () => { pararCancion(); if (s.cancion) $("#modalDisco").hidden = false; video.pause(); audio.currentTime = 0; audio.play().catch(() => {}); avisar(D.musicaTexto); });
+      acc.appendChild(v);
+    }
     modal.hidden = false;
-    // reinicia la animación de la carta
     const carta = modal.querySelector(".modal-carta");
     carta.style.animation = "none"; void carta.offsetWidth; carta.style.animation = "";
   }
-  $("#modalCerrar").onclick = () => (modal.hidden = true);
-  modal.addEventListener("click", (e) => { if (e.target === modal) modal.hidden = true; });
+  function cerrarModal() { pararCancion(); modal.hidden = true; }
+  $("#modalCerrar").onclick = cerrarModal;
+  modal.addEventListener("click", (e) => { if (e.target === modal) cerrarModal(); });
 
   /* ---------- Aviso flotante ---------- */
   let tAviso = null;
@@ -823,26 +877,40 @@ const DATOS = {
 
   /* ---------- Música ---------- */
   const btn = $("#btnMusica");
-  const audio = D.musica ? new Audio(D.musica) : null;
-  let audioFallo = !audio;
+  const rutasMusica = variantes(D.musica);
+  const audio = rutasMusica.length ? new Audio(rutasMusica[0]) : null;
+  let audioFallo = !audio, musicaResuelta = false;
   if (audio) {
     audio.loop = true;
-    audio.addEventListener("error", () => { audioFallo = true; btn.hidden = true; });
+    audio.preload = "auto";
+    encontrar(rutasMusica).then((r) => {
+      musicaResuelta = true;
+      if (!r) { audioFallo = true; btn.hidden = true; return; }
+      if (!audio.src.endsWith(r)) { audioFallo = false; audio.src = r; }
+    });
+    audio.addEventListener("error", () => { if (musicaResuelta) { audioFallo = true; btn.hidden = true; } });
     audio.addEventListener("playing", () => { btn.hidden = false; btn.classList.add("sonando"); btn.textContent = "♪"; });
     audio.addEventListener("pause", () => { btn.classList.remove("sonando"); btn.textContent = "▶"; });
   }
   btn.addEventListener("click", () => {
     if (!audio) return;
-    if (audio.paused) { video.pause(); audio.play().catch(() => {}); } else audio.pause();
+    if (audio.paused) { video.pause(); pararCancion(); audio.play().catch(() => {}); } else audio.pause();
   });
 
   /* ---------- Video ---------- */
   const video = $("#video"), marco = $("#videoMarco");
   let musicaAntes = false;
   if (D.video) {
-    video.src = D.video;
-    if (D.videoPortada) video.poster = D.videoPortada;
-    video.addEventListener("error", () => $("#seccionVideo").remove());
+    const rutasVideo = variantes(D.video);
+    let videoResuelto = false;
+    video.src = rutasVideo[0];
+    if (D.videoPortada) probar(variantes(D.videoPortada)).then((r) => { if (r) video.poster = r.src; });
+    encontrar(rutasVideo).then((r) => {
+      videoResuelto = true;
+      if (!r) { $("#seccionVideo").remove(); return; }
+      if (!video.src.endsWith(r)) video.src = r;
+    });
+    video.addEventListener("error", () => { if (videoResuelto) $("#seccionVideo").remove(); });
   } else {
     $("#seccionVideo").remove();
   }
@@ -852,6 +920,7 @@ const DATOS = {
   });
   video.addEventListener("play", () => {
     marco.classList.add("reproduciendo");
+    pararCancion();
     if (audio && !audio.paused) { musicaAntes = true; audio.pause(); }
   });
   video.addEventListener("ended", () => {
